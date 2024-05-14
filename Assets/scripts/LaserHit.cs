@@ -87,20 +87,22 @@ public class LaserHit : MonoBehaviour
                 if (hit.rigidbody)
                 {
                     GameObject sphereHit = hit.rigidbody.gameObject;
-                    AudioSource soundHit = sphereHit.GetComponent<AudioSource>();
-                    sphereHit.transform.position 
+                    AudioSource soundHit = hit.rigidbody.gameObject.GetComponent<AudioSource>();
+                    sphereHit.transform.position = new Vector3(0, -2f, 0);
                     soundHit.Play();
+                    StartCoroutine(DestroyObjectAfterDelay(sphereHit, 1f));
 
-                    
-                    
-                    
+
+
+
+
 
                 }
                 GameObject laser = Instantiate(laserToShow);
                 LineRenderer renderLaser = laser.GetComponent<LineRenderer>();
                 renderLaser.SetPosition(0, lineRenderer.GetPosition(0));
                 renderLaser.SetPosition(1, lineRenderer.GetPosition(1));
-                StartCoroutine(DestroyObjectAfterDelay(laser));
+                StartCoroutine(DestroyObjectAfterDelay(laser, 0.25f));
                 hasShot = true;
 
 
@@ -116,10 +118,10 @@ public class LaserHit : MonoBehaviour
 
     }
 
-    IEnumerator DestroyObjectAfterDelay(GameObject gameObject)
+    IEnumerator DestroyObjectAfterDelay(GameObject gameObject, float time)
     {
         // Wait for the specified delay
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(time);
 
         // Destroy the object after the delay
         Destroy(gameObject);
