@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Y
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: left_quest2_controller_world
+    m_Weight: 0
+  - m_Path: left_quest2_controller_world/b_button_oculus
+    m_Weight: 0
+  - m_Path: left_quest2_controller_world/b_button_x
+    m_Weight: 0
+  - m_Path: left_quest2_controller_world/b_button_y
+    m_Weight: 1
+  - m_Path: left_quest2_controller_world/b_thumbstick
+    m_Weight: 0
+  - m_Path: left_quest2_controller_world/b_trigger_front
+    m_Weight: 0
+  - m_Path: left_quest2_controller_world/b_trigger_grip
+    m_Weight: 0
+  - m_Path: left_quest2_mesh
+    m_Weight: 0
+  - m_Path: right_quest2_controller_world
+    m_Weight: 0
+  - m_Path: right_quest2_controller_world/b_button_a
+    m_Weight: 0
+  - m_Path: right_quest2_controller_world/b_button_b
+    m_Weight: 0
+  - m_Path: right_quest2_controller_world/b_button_oculus
+    m_Weight: 0
+  - m_Path: right_quest2_controller_world/b_thumbstick
+    m_Weight: 0
+  - m_Path: right_quest2_controller_world/b_trigger_front
+    m_Weight: 0
+  - m_Path: right_quest2_controller_world/b_trigger_grip
+    m_Weight: 0
+  - m_Path: right_quest2_mesh
+    m_Weight: 0

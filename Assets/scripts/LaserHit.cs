@@ -1,0 +1,129 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class LaserHit : MonoBehaviour
+{
+    private LineRenderer lineRenderer;
+    public float maxDistance;
+    private bool shoot = false;
+    private bool hasShot = false;
+    public GameObject laserToShow;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        HidePointer();
+
+    }
+
+    void HidePointer()
+    {
+        if (lineRenderer)
+        {
+            lineRenderer.enabled = false;
+        }
+        shoot = false;
+        
+
+    }
+
+    void ShowPointer()
+    {
+        if (lineRenderer)
+        {
+            lineRenderer.enabled = true;
+        }
+        shoot = true;
+
+    }
+
+    public void OnShootAction(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            ShowPointer();
+
+            hasShot = false;
+
+        }
+        if (context.canceled)
+        {
+            HidePointer();
+
+        }
+
+    }
+
+
+
+    private void FixedUpdate()
+    {
+
+        lineRenderer.SetPosition(0, transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance))
+        {
+
+
+            lineRenderer.SetPosition(1, transform.position + transform.forward * hit.distance);
+
+
+
+        }
+        else
+        {
+            lineRenderer.SetPosition(1, transform.position + transform.forward * maxDistance);
+
+
+        }
+        if (shoot)
+        {
+            if (!hasShot)
+            {
+                if (hit.rigidbody)
+                {
+                    GameObject sphereHit = hit.rigidbody.gameObject;
+                    AudioSource soundHit = sphereHit.GetComponent<AudioSource>();
+                    sphereHit.transform.position 
+                    soundHit.Play();
+
+                    
+                    
+                    
+
+                }
+                GameObject laser = Instantiate(laserToShow);
+                LineRenderer renderLaser = laser.GetComponent<LineRenderer>();
+                renderLaser.SetPosition(0, lineRenderer.GetPosition(0));
+                renderLaser.SetPosition(1, lineRenderer.GetPosition(1));
+                StartCoroutine(DestroyObjectAfterDelay(laser));
+                hasShot = true;
+
+
+            }
+            
+            
+        }
+
+
+
+
+
+
+    }
+
+    IEnumerator DestroyObjectAfterDelay(GameObject gameObject)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(0.25f);
+
+        // Destroy the object after the delay
+        Destroy(gameObject);
+    }
+
+
+}
