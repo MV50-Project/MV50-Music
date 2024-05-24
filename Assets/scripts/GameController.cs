@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor.TerrainTools;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +12,60 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameObject shpereTiming;
     public float bpm;
+    
+    // Level variables
+    [System.Serializable]
+    private class MusicInfo
+    {
+        public string title;
+        public string artist;
+        public string album;
+        public int year;
+        public int bpm;
+        public int duration;
+        public string path;
+    }
+    [System.Serializable]
+    private class LevelInfo
+    {
+        public string description;
+        public int difficulty;
+    }
+    [System.Serializable]
+    private class LevelData
+    {
+        public int initialWaitForBeat;
+        public Key[] keys;
+    }
+    [System.Serializable]
+    private class Key
+    {
+        public float waitForBeat;
+        public int note;
+        public Coordinates coordinates;
+    }
+    [System.Serializable]
+    private class Coordinates
+    {
+        public float x;
+        public float y;
+        public float z;
+    }
+    [System.Serializable]
+    private class Root
+    {
+        public string name;
+        public string version;
+        public MusicInfo music;
+        public LevelInfo level;
+        public LevelData data;
+    }
+    
+    private string name = new string("None");
+    private string version = new string("0.0.0");
+    private MusicInfo musicInfo = new MusicInfo();
+    private LevelInfo levelInfo = new LevelInfo();
+    private LevelData levelData = new LevelData();
 
     private float beatime;
     private float nextBeatTime;
@@ -20,6 +76,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        readJsonMap("Assets/maps/TutorialMap.json");
         beatime = 60 / bpm;
         nextBeatTime = Time.time + beatime;
     }
@@ -40,6 +97,17 @@ public class GameController : MonoBehaviour
                 newSphereTiming.transform.SetParent(newSphere.transform);
             }
         }
+    }
+
+    private void readJsonMap(string path)
+    {
+        var json = File.ReadAllText(path);
+        Root data = JsonUtility.FromJson<Root>(json);
+        name = data.name;
+        version = data.version;
+        musicInfo = data.music;
+        levelInfo = data.level;
+        levelData = data.data;
     }
 }
 
