@@ -1,0 +1,58 @@
+﻿{
+  "name": "Tutorial",
+  "version": "1.0.0",
+  "music": {
+    "title": "The Less I Know The Better",
+    "artist": "Tame Impala",
+    "album": "Currents",
+    "year": 2015,
+    "bpm": 117,
+    "duration": 216,
+    "path": "music/The Less I Know The Better.mp3"
+  },
+  "level": {
+    "description": "A tutorial for the MEAN stack",
+    "difficulty": 2
+  },
+  "data": {
+    "initialWaitForBeat": 1,
+    "keys": [
+      {
+        "waitForBeat": 1,
+        "note": 4,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 5,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 6,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 7,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    ]
+  }
+}
