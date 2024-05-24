@@ -46,7 +46,7 @@ public class sphereTiming : MonoBehaviour
         gameObject.transform.position = new Vector3(0, -2f, 0);
         yield return new WaitForSeconds(timeToDestroy);
 
-        Destroy(gameObject);
+        Destroy(gameObject1);
         Destroy(gameObject2);
     }
 
