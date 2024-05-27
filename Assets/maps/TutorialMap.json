@@ -16,6 +16,7 @@
   },
   "data": {
     "initialWaitForBeat": 5,
+
     "keys": [
       {
         "waitForBeat": 1,
@@ -24,6 +25,7 @@
           "x": -5,
           "y": 1,
           "z": 5
+
         }
       },
       {
