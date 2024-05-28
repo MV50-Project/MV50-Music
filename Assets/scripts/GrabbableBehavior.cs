@@ -18,7 +18,7 @@ public class GrabbableBehavior : MonoBehaviour
     private Vector3 previousGrabberPosition;
     private Vector3 grabberVelocity;
 
-    private float throwBoost = 1f;
+    private float throwBoost = 2f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();

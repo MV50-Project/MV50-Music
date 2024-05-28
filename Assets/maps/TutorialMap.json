@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "Tutorial",
   "version": "1.0.0",
   "music": {
@@ -16,16 +16,14 @@
   },
   "data": {
     "initialWaitForBeat": 5,
-
     "keys": [
       {
-        "waitForBeat": 1,
+        "waitForBeat": 0,
         "note": 4,
         "coordinates": {
-          "x": -5,
+          "x": -3,
           "y": 1,
           "z": 5
-
         }
       },
       {
@@ -47,11 +45,83 @@
         }
       },
       {
+        "waitForBeat": 1.5,
+        "note": 5,
+        "coordinates": {
+          "x": -3,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 6,
+        "coordinates": {
+          "x": 3,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 3,
+        "note": 5,
+        "coordinates": {
+          "x": -1,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 2,
+        "note": 6,
+        "coordinates": {
+          "x": 0,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.25,
+        "note": 5,
+        "coordinates": {
+          "x": -2,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.5,
+        "note": 6,
+        "coordinates": {
+          "x": 3,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 5,
+        "coordinates": {
+          "x": -3,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 2,
+        "note": 6,
+        "coordinates": {
+          "x": 0,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
         "waitForBeat": 3,
         "note": 7,
         "coordinates": {
           "x": 3,
-          "y": 4,
+          "y": 3,
           "z": 5
         }
       }

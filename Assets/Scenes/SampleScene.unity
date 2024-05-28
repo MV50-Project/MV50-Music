@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00073307287, g: 0.004035685, b: 0.019824302, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031137783, g: 0.0073046912, b: 0.09261957, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1264,7 +1264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabType: 2
-  throwBoost: 2
 --- !u!54 &893252907
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1661,7 +1660,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabType: 2
-  throwBoost: 2
 --- !u!54 &993160846
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2381,7 +2379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabType: 2
-  throwBoost: 2
 --- !u!54 &1358718018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2839,7 +2836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabType: 2
-  throwBoost: 2
 --- !u!54 &1835256585
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3235,7 +3231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabType: 2
-  throwBoost: 2
 --- !u!54 &1947665733
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3567,7 +3562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabType: 2
-  throwBoost: 2
 --- !u!54 &2109557587
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3651,9 +3645,9 @@ SceneRoots:
   - {fileID: 291342133}
   - {fileID: 832447943}
   - {fileID: 896684826}
+  - {fileID: 1567412599}
   - {fileID: 893252908}
   - {fileID: 1358718019}
-  - {fileID: 1567412599}
   - {fileID: 1947665734}
   - {fileID: 1835256586}
   - {fileID: 993160847}
