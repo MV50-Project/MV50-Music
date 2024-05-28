@@ -16,7 +16,9 @@ public class OrbeBehavior : MonoBehaviour
     {
         if (other.CompareTag("floor")) 
         {
+            Destroy(transform.parent.gameObject);
             Destroy(this.gameObject);
+            
         }
     }
 
