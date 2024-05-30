@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private TextAsset jsonMapTutorial;
 
+    private AudioSource audioSource;
+
     // Level variables
     [System.Serializable]
     private class MusicInfo
@@ -80,7 +82,28 @@ public class GameController : MonoBehaviour
         readJsonMap(jsonMapTutorial);
         Debug.Log("lecture terminee");
         Debug.Log(songName);
+        audioSource = GetComponent<AudioSource>();
+        AudioClip audioClip = Resources.Load<AudioClip>("test_sound");
+        if (audioSource != null && audioClip != null)
+        {
+            // Assign the AudioClip to the AudioSource
+            audioSource.clip = audioClip;
 
+            // Optionally, play the audio
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or AudioClip is missing.");
+            if (audioSource == null)
+            {
+                Debug.LogWarning("AudioSource is missing.");
+            }
+            if (audioClip == null)
+            {
+                Debug.LogWarning("AudioClip is missing.");
+            }
+        }
         beatTime = 60f / musicInfo.bpm;
         Debug.Log(beatTime);
         nextBeatTime = Time.time + levelData.initialWaitForBeat*beatTime;
