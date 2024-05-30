@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     private List<GameObject> spheres = new List<GameObject>();
     [SerializeField]
     private GameObject shpereTiming;
+    [SerializeField]
+    private TextAsset jsonMapTutorial;
 
     // Level variables
     [System.Serializable]
@@ -75,7 +77,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        readJsonMap("Assets/maps/TutorialMap.json");
+        readJsonMap(jsonMapTutorial);
         Debug.Log("lecture terminee");
         Debug.Log(songName);
 
@@ -104,9 +106,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void readJsonMap(string path)
+    private void readJsonMap(TextAsset jsonMap)
     {
-        var json = File.ReadAllText(path);
+        var json = jsonMap.text;
         Root data = JsonUtility.FromJson<Root>(json);
         songName = data.name;
         version = data.version;
