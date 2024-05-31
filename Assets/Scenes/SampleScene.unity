@@ -791,11 +791,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1455719521190542181, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913490433208739509, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6710816609236125400, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7927638110859507510, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,6 +846,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
+--- !u!114 &281357674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5066659959848747761, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
+  m_PrefabInstance: {fileID: 281357673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01894faac54a9624d854ecd8075809be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &291342131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,7 +2119,19 @@ MonoBehaviour:
     m_ActionId: 11ac06af-6041-4461-b30b-68bd022a0c70
     m_ActionName: Controller/left Trigger Axis
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 281357674}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: TogglePauseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7227a8fc-5e20-4160-8879-f7ba6f62a896
     m_ActionName: Controller/Y Pressed
   - m_PersistentCalls:
