@@ -76,6 +76,9 @@ public class GameController : MonoBehaviour
     private float nextBeatTime;
     private Vector3 sphereLocation;
     private int noteNumber;
+    private bool preSpawn = false;
+    private GameObject newSphere;
+    private GameObject newSphereTiming;
 
     private void Start()
     {
@@ -89,8 +92,8 @@ public class GameController : MonoBehaviour
         noteNumber = 0;
 
         audioSource = GetComponent<AudioSource>();
-        //AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
-        AudioClip audioClip = Resources.Load<AudioClip>("test");
+        AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
+        //AudioClip audioClip = Resources.Load<AudioClip>("test");
        
         leadNotes[0] = Resources.Load<AudioClip>("sound1");
         leadNotes[1] = Resources.Load<AudioClip>("sound2");
@@ -123,13 +126,20 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (Time.time >= nextBeatTime && noteNumber <= levelData.keys.Count()-1)
+        if (preSpawn == false)
         {
             sphereLocation = new Vector3(levelData.keys[noteNumber].coordinates.x, levelData.keys[noteNumber].coordinates.y, levelData.keys[noteNumber].coordinates.z);
-            GameObject newSphere = Instantiate(sphere, sphereLocation, Quaternion.Euler(90f, 0f, 0f));
-            GameObject newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
-            newSphereTiming.transform.SetParent(newSphere.transform);
+            newSphere = Instantiate(sphere, new Vector3(0,-3, 0), Quaternion.Euler(90f, 0f, 0f));
             newSphere.GetComponent<AudioSource>().clip = leadNotes[levelData.keys[noteNumber].note];
+            preSpawn = true;
+        }
+        if (Time.time >= nextBeatTime && noteNumber <= levelData.keys.Count()-1)
+        {
+            newSphere.transform.position = sphereLocation;
+            newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
+            newSphereTiming.transform.SetParent(newSphere.transform);
+
+            preSpawn = false;
 
             if (noteNumber != levelData.keys.Count()-1)
             {
