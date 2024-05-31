@@ -1,0 +1,220 @@
+{
+  "name": "Song1",
+  "version": "1.0.0",
+  "music": {
+    "title": "Song1",
+    "artist": "Ninaldi",
+    "album": "Disco_Blaster",
+    "year": 2024,
+    "bpm": 105,
+    "duration": 107,
+    "path": "song1_noLead"
+  },
+  "level": {
+    "description": "First level",
+    "difficulty": 2
+  },
+  "data": {
+    "initialWaitForBeat": 43,
+    "keys": [
+      {
+        "waitForBeat": 0,
+        "note": 0,
+        "coordinates": {
+          "x": 0,
+          "y": 1.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.5,
+        "note": 2,
+        "coordinates": {
+          "x": 0.5,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": 1,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": 1.5,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": 2,
+          "y": 2,
+          "z": 5
+        }
+      },
+
+
+
+      {
+        "waitForBeat": 0.5,
+        "note": 1,
+        "coordinates": {
+          "x": 1.5,
+          "y": 1.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.5,
+        "note": 2,
+        "coordinates": {
+          "x": 1,
+          "y": 1.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": 0.5,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": 0,
+          "y": 2,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": -0.5,
+          "y": 2,
+          "z": 5
+        }
+      },
+
+
+      {
+        "waitForBeat": 0.5,
+        "note": 0,
+        "coordinates": {
+          "x": 0,
+          "y": 2.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.5,
+        "note": 2,
+        "coordinates": {
+          "x": -0.5,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": -1,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": -1.5,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": -2,
+          "y": 3,
+          "z": 5
+        }
+      },
+
+      {
+        "waitForBeat": 0.5,
+        "note": 4,
+        "coordinates": {
+          "x": -1.5,
+          "y": 3.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.5,
+        "note": 2,
+        "coordinates": {
+          "x": -1,
+          "y": 3.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": -0.5,
+          "y": 3.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 1,
+        "note": 2,
+        "coordinates": {
+          "x": 0,
+          "y": 3.5,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.5,
+        "note": 4,
+        "coordinates": {
+          "x": 0,
+          "y": 3,
+          "z": 5
+        }
+      },
+      {
+        "waitForBeat": 0.5,
+        "note": 2,
+        "coordinates": {
+          "x": 0,
+          "y": 2.5,
+          "z": 5
+        }
+      }
+
+
+
+    ]
+  }
+}

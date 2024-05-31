@@ -10,13 +10,13 @@ using UnityEngine.Serialization;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> spheres = new List<GameObject>();
+    private GameObject sphere;
     [SerializeField]
     private GameObject shpereTiming;
-    [SerializeField]
-    private TextAsset jsonMapTutorial;
+
 
     private AudioSource audioSource;
+    private AudioClip[] leadNotes = new AudioClip[5];
 
     // Level variables
     [System.Serializable]
@@ -79,11 +79,26 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        readJsonMap(jsonMapTutorial);
+        TextAsset map = Resources.Load<TextAsset>("song1Map");
+        readJsonMap(map);
         Debug.Log("lecture terminee");
         Debug.Log(songName);
+        beatTime = 60f / musicInfo.bpm;
+        Debug.Log(beatTime);
+        nextBeatTime = Time.time + levelData.initialWaitForBeat*beatTime;
+        noteNumber = 0;
+
         audioSource = GetComponent<AudioSource>();
-        AudioClip audioClip = Resources.Load<AudioClip>("test_sound");
+        AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
+        //AudioClip audioClip = Resources.Load<AudioClip>("test");
+       
+        leadNotes[0] = Resources.Load<AudioClip>("sound1");
+        leadNotes[1] = Resources.Load<AudioClip>("sound2");
+        leadNotes[2] = Resources.Load<AudioClip>("sound3");
+        leadNotes[3] = Resources.Load<AudioClip>("sound4");
+        leadNotes[4] = Resources.Load<AudioClip>("sound5");
+
+
         if (audioSource != null && audioClip != null)
         {
             // Assign the AudioClip to the AudioSource
@@ -104,11 +119,6 @@ public class GameController : MonoBehaviour
                 Debug.LogWarning("AudioClip is missing.");
             }
         }
-        beatTime = 60f / musicInfo.bpm;
-        Debug.Log(beatTime);
-        nextBeatTime = Time.time + levelData.initialWaitForBeat*beatTime;
-        noteNumber = 0;
-;
     }
 
     void Update()
@@ -116,9 +126,10 @@ public class GameController : MonoBehaviour
         if (Time.time >= nextBeatTime && noteNumber <= levelData.keys.Count()-1)
         {
             sphereLocation = new Vector3(levelData.keys[noteNumber].coordinates.x, levelData.keys[noteNumber].coordinates.y, levelData.keys[noteNumber].coordinates.z);
-            GameObject newSphere = Instantiate(spheres[levelData.keys[noteNumber].note], sphereLocation, Quaternion.Euler(90f, 0f, 0f));
+            GameObject newSphere = Instantiate(sphere, sphereLocation, Quaternion.Euler(90f, 0f, 0f));
             GameObject newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
             newSphereTiming.transform.SetParent(newSphere.transform);
+            newSphere.GetComponent<AudioSource>().clip = leadNotes[levelData.keys[noteNumber].note];
 
             if (noteNumber != levelData.keys.Count()-1)
             {
