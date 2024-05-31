@@ -89,8 +89,8 @@ public class GameController : MonoBehaviour
         noteNumber = 0;
 
         audioSource = GetComponent<AudioSource>();
-        AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
-        //AudioClip audioClip = Resources.Load<AudioClip>("test");
+        //AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
+        AudioClip audioClip = Resources.Load<AudioClip>("test");
        
         leadNotes[0] = Resources.Load<AudioClip>("sound1");
         leadNotes[1] = Resources.Load<AudioClip>("sound2");
