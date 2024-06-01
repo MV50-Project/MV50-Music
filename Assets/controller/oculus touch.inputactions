@@ -411,12 +411,12 @@
                 },
                 {
                     "name": "left Trigger",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "60ede318-7b1a-47de-b07a-25cd49780472",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "left Grab",
@@ -521,7 +521,7 @@
                 {
                     "name": "",
                     "id": "4059e647-817b-49ae-9439-189a53a64188",
-                    "path": "<OculusTouchController>{LeftHand}/triggerPressed",
+                    "path": "<OculusTouchController>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
