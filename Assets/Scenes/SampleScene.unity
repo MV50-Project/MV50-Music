@@ -814,6 +814,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3015878573168527691, guid: 77dce967d47b7a24a8d9db73314a726b, type: 3}
     - target: {fileID: 5188798295641260974, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
+      propertyPath: m_ActiveInputMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188798295641260974, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
       propertyPath: m_LeftClickAction
       value: 
       objectReference: {fileID: 7845581147302794363, guid: 77dce967d47b7a24a8d9db73314a726b, type: 3}
@@ -1315,7 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1580843380}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2590,6 +2594,7 @@ GameObject:
   - component: {fileID: 1038674921}
   - component: {fileID: 1038674922}
   - component: {fileID: 1038674923}
+  - component: {fileID: 1038674924}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Untagged
@@ -2865,8 +2870,48 @@ MonoBehaviour:
     m_ActionName: Controller/left Grip Pressed
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 811e627e-d199-4caf-a1da-fdb271ce7381
-    m_ActionName: Controller/Menu
+    m_ActionId: 9574b761-afb1-4591-b300-5e44879410ce
+    m_ActionName: UI/left Position
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bcb8254a-150a-4ec0-acb9-4735c65ea419
+    m_ActionName: UI/left Rotation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2833d04c-a8b3-4f09-a24d-395ef9896d82
+    m_ActionName: UI/left pose IsTracked
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fce32069-4be8-4f6f-9a72-479dcb06262d
+    m_ActionName: UI/left TrackingState
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 60ede318-7b1a-47de-b07a-25cd49780472
+    m_ActionName: UI/left Trigger
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3adea5f6-cfbe-467a-80a4-7d54a6d535d0
+    m_ActionName: UI/left Grab
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 793fe108-878d-47c4-9cbe-baba7cb6d191
+    m_ActionName: UI/left Joystick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f2a93e88-bd0f-45f4-b793-4a6386e4189c
+    m_ActionName: UI/left Haptic
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d941375c-677e-48ff-aaf6-8662cd566712
+    m_ActionName: UI/left Pointer Position
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 786c1651-74c3-4262-a189-ee1ae607d681
+    m_ActionName: UI/left ThumbClick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77ca1c8f-cd2e-4bbe-9c67-959e728c498f
+    m_ActionName: UI/B pressed
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Controller
@@ -2898,6 +2943,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnimatorHand: {fileID: 1891557407}
+--- !u!114 &1038674924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038674918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ActionAssets:
+  - {fileID: -944628639613478452, guid: 77dce967d47b7a24a8d9db73314a726b, type: 3}
 --- !u!1001 &1039011523
 PrefabInstance:
   m_ObjectHideFlags: 0
