@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     private GameObject sphere;
     [SerializeField]
     private GameObject shpereTiming;
+    [SerializeField]
+    private GameObject secondSphereTiming;
 
 
     private AudioSource audioSource;
@@ -79,6 +81,7 @@ public class GameController : MonoBehaviour
     private bool preSpawn = false;
     private GameObject newSphere;
     private GameObject newSphereTiming;
+    private GameObject newSecondSphereTiming;
 
     private void Start()
     {
@@ -92,8 +95,8 @@ public class GameController : MonoBehaviour
         noteNumber = 0;
 
         audioSource = GetComponent<AudioSource>();
-        AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
-        //AudioClip audioClip = Resources.Load<AudioClip>("test");
+        //AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
+        AudioClip audioClip = Resources.Load<AudioClip>("test");
        
         leadNotes[0] = Resources.Load<AudioClip>("sound1");
         leadNotes[1] = Resources.Load<AudioClip>("sound2");
@@ -137,6 +140,7 @@ public class GameController : MonoBehaviour
         {
             newSphere.transform.position = sphereLocation;
             newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
+            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(20f, 12.7f, 51.48f), Quaternion.Euler(90f, 0f, 0f));
             newSphereTiming.transform.SetParent(newSphere.transform);
 
             preSpawn = false;
