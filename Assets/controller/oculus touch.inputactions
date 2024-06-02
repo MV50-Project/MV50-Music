@@ -383,9 +383,27 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "right Position",
+                    "type": "PassThrough",
+                    "id": "400e9553-778b-44bf-979a-8787394c9578",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "left Rotation",
                     "type": "PassThrough",
                     "id": "bcb8254a-150a-4ec0-acb9-4735c65ea419",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "right Rotation",
+                    "type": "PassThrough",
+                    "id": "359df8f6-2020-4e98-ab12-751beb36cb3f",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -401,6 +419,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "right pose IsTracked",
+                    "type": "PassThrough",
+                    "id": "9bac73b2-70fc-44fa-aa92-1120bb922f13",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "left TrackingState",
                     "type": "PassThrough",
                     "id": "fce32069-4be8-4f6f-9a72-479dcb06262d",
@@ -410,10 +437,28 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "right TrackingState",
+                    "type": "PassThrough",
+                    "id": "a898f730-d0ac-4acf-8aaa-ef97be7baad1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "left Trigger",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "60ede318-7b1a-47de-b07a-25cd49780472",
-                    "expectedControlType": "Analog",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "right Trigger",
+                    "type": "Button",
+                    "id": "79e220fc-ddcc-494a-b2a1-d82aca023cc7",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -422,6 +467,15 @@
                     "name": "left Grab",
                     "type": "Button",
                     "id": "3adea5f6-cfbe-467a-80a4-7d54a6d535d0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "right Grab",
+                    "type": "Button",
+                    "id": "cba08b55-e318-4215-8dab-cfda87707b3f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -437,9 +491,27 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "right Joystick",
+                    "type": "PassThrough",
+                    "id": "506b9e40-ea7f-4410-9cce-37029b25e0fd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "left Haptic",
                     "type": "PassThrough",
                     "id": "f2a93e88-bd0f-45f4-b793-4a6386e4189c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "right Haptic",
+                    "type": "PassThrough",
+                    "id": "647fef16-6f2e-4455-8b9f-17ee1710920f",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -455,9 +527,27 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "right Pointer Position",
+                    "type": "PassThrough",
+                    "id": "ab150c89-e3de-4410-ab4e-ea496b7a354c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "left ThumbClick",
                     "type": "Button",
                     "id": "786c1651-74c3-4262-a189-ee1ae607d681",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "right ThumbClick",
+                    "type": "Button",
+                    "id": "03619902-72b1-4ee0-93e2-5a16229769a4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -468,6 +558,51 @@
                     "type": "Button",
                     "id": "77ca1c8f-cd2e-4bbe-9c67-959e728c498f",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PointerPosition",
+                    "type": "PassThrough",
+                    "id": "ca7ae5df-3fe7-42f7-84da-dede63e90da2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Trigger",
+                    "type": "Button",
+                    "id": "e74cf4a5-0030-4783-b232-897cb7af9158",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ThumbClick",
+                    "type": "Button",
+                    "id": "3a683ccf-b56e-4609-83fb-6c74044d970c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "903aa1c8-939b-41b3-a117-bcb60619fb29",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Joystick",
+                    "type": "PassThrough",
+                    "id": "c98969e6-cb40-4454-96bc-1c19a9c19722",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -521,7 +656,7 @@
                 {
                     "name": "",
                     "id": "4059e647-817b-49ae-9439-189a53a64188",
-                    "path": "<OculusTouchController>/trigger",
+                    "path": "<OculusTouchController>{LeftHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -592,6 +727,171 @@
                     "processors": "",
                     "groups": "",
                     "action": "B pressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3335b1a-6e0f-4303-9a5f-f7d6e6fa0439",
+                    "path": "<OculusTouchController>{RightHand}/devicePose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36f18d9a-fb23-4d24-9e85-81bce2520e65",
+                    "path": "<OculusTouchController>{RightHand}/devicePose/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9a77078-9760-45a6-9084-e5e6f2323776",
+                    "path": "<OculusTouchController>{RightHand}/devicePose/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right pose IsTracked",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7a1e56b-2b1a-42ed-925f-573ef5089da2",
+                    "path": "<OculusTouchController>{RightHand}/devicePose/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right TrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5944c46-4bb2-4494-98ed-aa7c166338e4",
+                    "path": "<OculusTouchController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2c8bc38-319f-4d32-a177-a16a9940eb12",
+                    "path": "<OculusTouchController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c15e3dd6-af45-4aa9-8c08-e9932c9fa568",
+                    "path": "<OculusTouchController>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right Joystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67a65c5d-739d-4fed-9d52-5ef9cf25b28e",
+                    "path": "<OculusTouchController>{RightHand}/haptic",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right Haptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e0bf011-77ce-468e-ab42-64bfd162d350",
+                    "path": "<OculusTouchController>{RightHand}/pointer/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right Pointer Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "38b0760c-eebc-471b-8b4f-5b8ba99d4d2a",
+                    "path": "<OculusTouchController>{RightHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right ThumbClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ee9769b-a526-4e46-a470-d576312f1569",
+                    "path": "<OculusTouchController>/pointer/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "448268f0-e176-4ac4-805c-038324d0f6e3",
+                    "path": "<OculusTouchController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d8824ac-4726-49e5-bd3b-647d531e676f",
+                    "path": "<OculusTouchController>/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60dc0445-e68b-4655-bbfe-b8184310c000",
+                    "path": "<OculusTouchController>/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90f7898a-842d-4412-a567-0c2e803ae810",
+                    "path": "<OculusTouchController>/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Joystick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
