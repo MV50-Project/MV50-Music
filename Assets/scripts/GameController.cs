@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     private GameObject sphere;
     [SerializeField]
     private GameObject shpereTiming;
+    [SerializeField]
+    private GameObject secondSphereTiming;
 
 
     private AudioSource audioSource;
@@ -76,6 +78,10 @@ public class GameController : MonoBehaviour
     private float nextBeatTime;
     private Vector3 sphereLocation;
     private int noteNumber;
+    private bool preSpawn = false;
+    private GameObject newSphere;
+    private GameObject newSphereTiming;
+    private GameObject newSecondSphereTiming;
 
     private void Start()
     {
@@ -123,13 +129,21 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (Time.time >= nextBeatTime && noteNumber <= levelData.keys.Count()-1)
+        if (preSpawn == false)
         {
             sphereLocation = new Vector3(levelData.keys[noteNumber].coordinates.x, levelData.keys[noteNumber].coordinates.y, levelData.keys[noteNumber].coordinates.z);
-            GameObject newSphere = Instantiate(sphere, sphereLocation, Quaternion.Euler(90f, 0f, 0f));
-            GameObject newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
-            newSphereTiming.transform.SetParent(newSphere.transform);
+            newSphere = Instantiate(sphere, new Vector3(0,-3, 0), Quaternion.Euler(90f, 0f, 0f));
             newSphere.GetComponent<AudioSource>().clip = leadNotes[levelData.keys[noteNumber].note];
+            preSpawn = true;
+        }
+        if (Time.time >= nextBeatTime && noteNumber <= levelData.keys.Count()-1)
+        {
+            newSphere.transform.position = sphereLocation;
+            newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
+            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(20f, 12.7f, 51.48f), Quaternion.Euler(90f, 0f, 0f));
+            newSphereTiming.transform.SetParent(newSphere.transform);
+
+            preSpawn = false;
 
             if (noteNumber != levelData.keys.Count()-1)
             {

@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 38049679d6f3edc4e901099f077e809c
+guid: 1b9a89c1547d92c4d9067f624348d84e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sting
-    second: {fileID: 2100000, guid: e66b99697fc18b04eb0fc90a6e210570, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

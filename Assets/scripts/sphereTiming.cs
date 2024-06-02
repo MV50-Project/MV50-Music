@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class sphereTiming : MonoBehaviour
 {
-    public float bpm = 105;
+    public float bpm;
     public float duration; 
     private Vector3 scale;
     private float elapsedTime = 0f;
-    private Vector3 targetScale = new Vector3(1f, 1f, 1f);
+    private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
 
     void Start()
     {
-        duration = (60 / bpm) * 3;// == needs to be played in 3 beats
+        duration = (60f / bpm) * 3;// == needs to be played in 3 beats
         scale = transform.localScale;
     }
 
@@ -32,7 +32,7 @@ public class sphereTiming : MonoBehaviour
         else
         {
             transform.localScale = targetScale;
-            StartCoroutine(DestroyObjectAfterDelay(transform.parent.gameObject, gameObject, 1f));
+            StartCoroutine(DestroyObjectAfterDelay(transform.parent.gameObject, gameObject, 60f/bpm));
 
 
         }
