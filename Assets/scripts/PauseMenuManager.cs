@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -12,9 +9,18 @@ public class PauseMenuManager : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        if(pauseMenu)
+        if (!pauseMenu) return;
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+            
+        if(pauseMenu.activeSelf)
         {
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            Time.timeScale = 0;
+            musicPlayer.Pause();
+        }
+        else
+        {
+            Time.timeScale = 1;
+            musicPlayer.Play();
         }
     }
     
@@ -26,5 +32,14 @@ public class PauseMenuManager : MonoBehaviour
     public void OnResumeClicked()
     {
         TogglePauseMenu();
+    }
+    
+    public void OnMainMenuClicked()
+    {
+        TogglePauseMenu();
+        // Cacher la map de la musique
+        // Afficher le menu principal
+        const string sceneName = "MainMenu";
+        SceneManager.LoadScene(sceneName);
     }
 }
