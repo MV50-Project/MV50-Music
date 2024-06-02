@@ -9,7 +9,7 @@ public class sphereTiming : MonoBehaviour
     public float duration; 
     private Vector3 scale;
     private float elapsedTime = 0f;
-    private Vector3 targetScale = new Vector3(0.4f, 0.4f, 0.4f);
+    private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
 
     void Start()
     {
