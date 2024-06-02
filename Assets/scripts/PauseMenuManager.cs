@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenu;
@@ -37,8 +36,6 @@ public class PauseMenuManager : MonoBehaviour
     public void OnMainMenuClicked()
     {
         TogglePauseMenu();
-        // Cacher la map de la musique
-        // Afficher le menu principal
         const string sceneName = "MainMenu";
         SceneManager.LoadScene(sceneName);
     }
