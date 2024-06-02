@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public AudioSource musicPlayer;
 
     public void TogglePauseMenu()
     {
@@ -19,7 +20,7 @@ public class PauseMenuManager : MonoBehaviour
     
     public void OnVolumeChanged(float value)
     {
-            Debug.Log("Volume changed to: " + value);
+        musicPlayer.volume = value;
     }
 
     public void OnResumeClicked()
