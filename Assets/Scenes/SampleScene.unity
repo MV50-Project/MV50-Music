@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031137783, g: 0.0073046912, b: 0.09261957, a: 1}
+  m_IndirectSpecularColor: {r: 0.0033075754, g: 0.0074639227, b: 0.093398325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1999,7 +1999,7 @@ GameObject:
   - component: {fileID: 643892711}
   - component: {fileID: 643892710}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: TimingPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2086,13 +2086,13 @@ Transform:
   m_GameObject: {fileID: 643892709}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 12.7, z: 51.48}
-  m_LocalScale: {x: 4.3739, y: 1, z: 0.3479}
+  m_LocalPosition: {x: 0, y: -0.0084398985, z: 0.019}
+  m_LocalScale: {x: 0.004640208, y: 0.0010608861, z: 0.0003690823}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1602220837}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 963194228}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &655599602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2219819612228619937, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
@@ -2289,8 +2289,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Volume: 0.5
   m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2780,7 +2780,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 643892713}
   m_Father: {fileID: 264999067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
@@ -3835,6 +3836,66 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 77ca1c8f-cd2e-4bbe-9c67-959e728c498f
     m_ActionName: UI/B pressed
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 400e9553-778b-44bf-979a-8787394c9578
+    m_ActionName: UI/right Position
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 359df8f6-2020-4e98-ab12-751beb36cb3f
+    m_ActionName: UI/right Rotation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9bac73b2-70fc-44fa-aa92-1120bb922f13
+    m_ActionName: UI/right pose IsTracked
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a898f730-d0ac-4acf-8aaa-ef97be7baad1
+    m_ActionName: UI/right TrackingState
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 79e220fc-ddcc-494a-b2a1-d82aca023cc7
+    m_ActionName: UI/right Trigger
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cba08b55-e318-4215-8dab-cfda87707b3f
+    m_ActionName: UI/right Grab
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 506b9e40-ea7f-4410-9cce-37029b25e0fd
+    m_ActionName: UI/right Joystick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 647fef16-6f2e-4455-8b9f-17ee1710920f
+    m_ActionName: UI/right Haptic
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab150c89-e3de-4410-ab4e-ea496b7a354c
+    m_ActionName: UI/right Pointer Position
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 03619902-72b1-4ee0-93e2-5a16229769a4
+    m_ActionName: UI/right ThumbClick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca7ae5df-3fe7-42f7-84da-dede63e90da2
+    m_ActionName: UI/PointerPosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e74cf4a5-0030-4783-b232-897cb7af9158
+    m_ActionName: UI/Trigger
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3a683ccf-b56e-4609-83fb-6c74044d970c
+    m_ActionName: UI/ThumbClick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 903aa1c8-939b-41b3-a117-bcb60619fb29
+    m_ActionName: UI/Grab
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c98969e6-cb40-4454-96bc-1c19a9c19722
+    m_ActionName: UI/Joystick
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Controller
@@ -4598,7 +4659,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2784573107316650703, guid: fbf9c3ba29fe6d04c8dfc490254eec79, type: 3}
       propertyPath: m_Name
-      value: discoBall
+      value: ReferenceDiscoBall
       objectReference: {fileID: 0}
     - target: {fileID: 3309893733843380341, guid: fbf9c3ba29fe6d04c8dfc490254eec79, type: 3}
       propertyPath: m_LocalScale.x
@@ -5362,7 +5423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8566982617457812272, guid: 6f0c9d3964cfa9f438e9d23cf798d27a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0048
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 8566982617457812272, guid: 6f0c9d3964cfa9f438e9d23cf798d27a, type: 3}
       propertyPath: m_LocalRotation.w
