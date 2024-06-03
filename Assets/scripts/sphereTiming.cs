@@ -9,7 +9,7 @@ public class sphereTiming : MonoBehaviour
     public float duration; 
     private Vector3 scale;
     private float elapsedTime = 0f;
-    private Vector3 targetScale = new Vector3(0.3f, 0.3f, 0.3f);
+    private Vector3 targetScale = new Vector3(0.4f, 0.4f, 0.4f);
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class sphereTiming : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         elapsedTime += Time.deltaTime;
 

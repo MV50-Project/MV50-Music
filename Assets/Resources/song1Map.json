@@ -15,7 +15,7 @@
     "difficulty": 2
   },
   "data": {
-    "initialWaitForBeat": 44,
+    "initialWaitForBeat": 47,
     "keys": [
       {
         "waitForBeat": 0,

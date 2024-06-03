@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031137783, g: 0.0073046912, b: 0.09261957, a: 1}
+  m_IndirectSpecularColor: {r: 0.0033075754, g: 0.0074639227, b: 0.093398325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1999,7 +1999,7 @@ GameObject:
   - component: {fileID: 643892711}
   - component: {fileID: 643892710}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: TimingPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2086,7 +2086,7 @@ Transform:
   m_GameObject: {fileID: 643892709}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 12.7, z: 51.48}
+  m_LocalPosition: {x: 0, y: 12.7, z: 51.5}
   m_LocalScale: {x: 4.3739, y: 1, z: 0.3479}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2289,8 +2289,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Volume: 0.5
   m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4598,7 +4598,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2784573107316650703, guid: fbf9c3ba29fe6d04c8dfc490254eec79, type: 3}
       propertyPath: m_Name
-      value: discoBall
+      value: ReferenceDiscoBall
       objectReference: {fileID: 0}
     - target: {fileID: 3309893733843380341, guid: fbf9c3ba29fe6d04c8dfc490254eec79, type: 3}
       propertyPath: m_LocalScale.x
@@ -5362,7 +5362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8566982617457812272, guid: 6f0c9d3964cfa9f438e9d23cf798d27a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0048
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 8566982617457812272, guid: 6f0c9d3964cfa9f438e9d23cf798d27a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5722,3 +5722,4 @@ SceneRoots:
   - {fileID: 1255249257}
   - {fileID: 121180095}
   - {fileID: 281357673}
+  - {fileID: 643892713}

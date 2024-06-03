@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     private GameObject secondSphereTiming;
 
 
+
     private AudioSource audioSource;
     private AudioClip[] leadNotes = new AudioClip[5];
 
@@ -127,7 +128,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (preSpawn == false)
         {
