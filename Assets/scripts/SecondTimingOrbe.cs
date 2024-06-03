@@ -5,7 +5,7 @@ using UnityEngine;
 public class SecondTimingOrbe : MonoBehaviour
 {
 
-    private Vector3 finalPos = new Vector3(0f, 12.7f, 51.48f);
+    private Vector3 finalPos = new Vector3(0f, 1.353f, 0.019f);
     private Vector3 startPos;
     public float beatTime;
     public float duration;
