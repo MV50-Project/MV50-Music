@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class MusicSelection : MonoBehaviour
+public class DisqueBehavior : MonoBehaviour
 {
-
 
     // Start is called before the first frame update
     void Start()
@@ -13,6 +11,6 @@ public class MusicSelection : MonoBehaviour
 
     }
 
+    // Update is called once per frame
 
-    
 }
