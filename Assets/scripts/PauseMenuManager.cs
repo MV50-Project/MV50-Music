@@ -33,6 +33,12 @@ public class PauseMenuManager : MonoBehaviour
         TogglePauseMenu();
     }
     
+    public void OnRetryClicked()
+    {
+        TogglePauseMenu();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
     public void OnMainMenuClicked()
     {
         TogglePauseMenu();
