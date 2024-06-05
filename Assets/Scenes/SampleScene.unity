@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0033075754, g: 0.0074639227, b: 0.093398325, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031137783, g: 0.0073046912, b: 0.09261957, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2113,13 +2113,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643892709}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.0084398985, z: 0.019}
-  m_LocalScale: {x: 0.004640208, y: 0.0010608861, z: 0.0003690823}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 19.19, z: 44.15}
+  m_LocalScale: {x: 3.8605502, y: 0.8826338, z: 0.30706838}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1602220837}
-  m_Father: {fileID: 963194228}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &655599602 stripped
 GameObject:
@@ -2463,6 +2463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &893252907
 Rigidbody:
@@ -2808,8 +2809,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 643892713}
+  m_Children: []
   m_Father: {fileID: 264999067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
@@ -2860,6 +2860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &993160846
 Rigidbody:
@@ -3547,6 +3548,7 @@ GameObject:
   - component: {fileID: 1038674922}
   - component: {fileID: 1038674923}
   - component: {fileID: 1038674924}
+  - component: {fileID: 1038674925}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Untagged
@@ -3701,19 +3703,7 @@ MonoBehaviour:
     m_ActionId: bb43b561-f1d8-47eb-a086-18513bff3209
     m_ActionName: Controller/left Trigger Pressed
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2129480294}
-        m_TargetAssemblyTypeName: TeleporterBehavior, Assembly-CSharp
-        m_MethodName: OnTeleportAction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 9e661369-8e68-4d0b-be69-6b9f13b78f46
     m_ActionName: Controller/left Thumbstick Clicked
   - m_PersistentCalls:
@@ -3969,6 +3959,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: 77dce967d47b7a24a8d9db73314a726b, type: 3}
+--- !u!114 &1038674925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038674918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee573f7b21ae8d45941dd9c0bc55fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1039011523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4409,6 +4411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &1358718018
 Rigidbody:
@@ -4990,6 +4993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &1835256585
 Rigidbody:
@@ -5385,6 +5389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &1947665733
 Rigidbody:
@@ -5717,6 +5722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &2109557587
 Rigidbody:
@@ -5781,17 +5787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 10
---- !u!114 &2129480294 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3504113161433999883, guid: bb70b94360c7c084d899c00a1d740b13, type: 3}
-  m_PrefabInstance: {fileID: 1694441428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e663673008b30c4d97117bbc8e69a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5811,3 +5806,4 @@ SceneRoots:
   - {fileID: 1255249257}
   - {fileID: 121180095}
   - {fileID: 281357673}
+  - {fileID: 643892713}

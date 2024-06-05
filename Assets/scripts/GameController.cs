@@ -130,7 +130,7 @@ public class GameController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (preSpawn == false)
+        if (preSpawn == false && noteNumber<levelData.keys.Count())
         {
             sphereLocation = new Vector3(levelData.keys[noteNumber].coordinates.x, levelData.keys[noteNumber].coordinates.y, levelData.keys[noteNumber].coordinates.z);
             newSphere = Instantiate(sphere, new Vector3(0,-3, 0), Quaternion.Euler(90f, 0f, 0f));
@@ -141,8 +141,8 @@ public class GameController : MonoBehaviour
         {
             newSphere.transform.position = sphereLocation;
             newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
-            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(0.0215f, 1.353f, 0.019f), Quaternion.Euler(90f, 0f, 0f));
-            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(-0.0215f, 1.353f, 0.019f), Quaternion.Euler(90f, 0f, 0f));
+            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
+            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(-18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
             newSphereTiming.transform.SetParent(newSphere.transform);
 
             preSpawn = false;
@@ -150,9 +150,12 @@ public class GameController : MonoBehaviour
             if (noteNumber != levelData.keys.Count()-1)
             {
                 nextBeatTime += beatTime * levelData.keys[noteNumber + 1].waitForBeat;
+                
             }
 
             noteNumber++;
+
+
         }
     }
 

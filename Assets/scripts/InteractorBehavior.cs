@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class InteractorBehavior : MonoBehaviour
 {
-
     Dictionary<string, GameObject> overlappingGameObjects = new Dictionary<string, GameObject>();
     Dictionary<string, GameObject> overlappingTriggers = new Dictionary<string, GameObject>();
 
@@ -14,15 +13,22 @@ public class InteractorBehavior : MonoBehaviour
         GrabbableBehavior gb = other.GetComponentInParent<GrabbableBehavior>();
         if (gb)
         {
-            overlappingGameObjects.Add(gb.gameObject.name, gb.gameObject);
+            if (!overlappingGameObjects.ContainsKey(gb.gameObject.name))
+            {
+                overlappingGameObjects.Add(gb.gameObject.name, gb.gameObject);
+            }
         }
+
         TriggerBehavior tb = other.GetComponentInParent<TriggerBehavior>();
         if (tb)
         {
-            overlappingTriggers.Add(tb.gameObject.name, tb.gameObject);
+            if (!overlappingTriggers.ContainsKey(tb.gameObject.name))
+            {
+                overlappingTriggers.Add(tb.gameObject.name, tb.gameObject);
+            }
         }
-
     }
+
     private void OnTriggerExit(Collider other)
     {
         GrabbableBehavior gb = other.GetComponentInParent<GrabbableBehavior>();
@@ -30,13 +36,14 @@ public class InteractorBehavior : MonoBehaviour
         {
             overlappingGameObjects.Remove(gb.gameObject.name);
         }
+
         TriggerBehavior tb = other.GetComponentInParent<TriggerBehavior>();
         if (tb)
         {
             overlappingTriggers.Remove(tb.gameObject.name);
         }
-
     }
+
     public void OnTriggerAction(InputAction.CallbackContext context)
     {
         GameObject nearestTrigger = GetNearestTrigger();
@@ -48,6 +55,7 @@ public class InteractorBehavior : MonoBehaviour
             }
         }
     }
+
     private GameObject GetNearestTrigger()
     {
         GameObject nearestTrigger = null;
@@ -84,7 +92,6 @@ public class InteractorBehavior : MonoBehaviour
         return nearestGrabbable;
     }
 
-
     public void OnGrabAction(InputAction.CallbackContext context)
     {
         GameObject nearestGrabbable = GetNearestGrabbable();
@@ -100,6 +107,4 @@ public class InteractorBehavior : MonoBehaviour
             }
         }
     }
-
-
 }

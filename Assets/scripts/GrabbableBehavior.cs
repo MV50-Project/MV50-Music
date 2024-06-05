@@ -7,6 +7,9 @@ public enum GrabType { None, Free, Snap };
 
 public class GrabbableBehavior : MonoBehaviour
 {
+
+    private AudioSource audioSource;
+    public GameObject menuToggle;
     private Rigidbody rb;
     private GameObject grabber;
     private bool wasKinematic;
@@ -19,10 +22,12 @@ public class GrabbableBehavior : MonoBehaviour
     private Vector3 grabberVelocity;
 
     private float throwBoost = 2f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         wasKinematic = rb.isKinematic;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -65,9 +70,30 @@ public class GrabbableBehavior : MonoBehaviour
         {
             transform.parent = null;
             rb.isKinematic = wasKinematic;
-            rb.velocity = grabberVelocity*throwBoost;  // Apply grabber's velocity to the object
+            rb.velocity = grabberVelocity * throwBoost;  // Apply grabber's velocity to the object
             isHeld = false;
             this.grabber = null;  // Clear the reference to the grabber
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("tourne_disque"))
+        {
+            if (!menuToggle.activeInHierarchy)
+            {
+                menuToggle.SetActive(true);
+            }
+            audioSource.Play();
+            gameObject.transform.position = new Vector3(0.0463f, 0.856f, 0.7801f);
+            gameObject.transform.rotation = Quaternion.identity;
+            if (grabber != null) // Check if grabber is not null
+            {
+                TryRelease(grabber);
+            }
+            grabType = GrabType.None;
+
+            //SceneManager.LoadScene("SampleScene");
         }
     }
 }
