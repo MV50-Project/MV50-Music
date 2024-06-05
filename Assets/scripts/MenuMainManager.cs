@@ -1,0 +1,32 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MenuMainManager : MonoBehaviour
+{
+    public GameObject pauseMenu;
+    public GameObject disque;
+
+    public void TogglePauseMenu()
+    {
+        Debug.Log("test");
+        pauseMenu.SetActive(false);
+
+    }
+    
+
+    public void OnChangeClicked()
+    {
+        TogglePauseMenu();
+        disque.transform.position = new Vector3(-0.28443f, 0.40526f, 0.77927f);
+        GrabbableBehavior grabbableBehaviorScript = disque.GetComponent<GrabbableBehavior>();
+        grabbableBehaviorScript.grabType = GrabType.Snap;
+        disque.GetComponent<AudioSource>().Stop();
+    }
+    
+    public void OnPlayClicked()
+    {
+        TogglePauseMenu();
+        const string sceneName = "SampleScene";
+        SceneManager.LoadScene(sceneName);
+    }
+}

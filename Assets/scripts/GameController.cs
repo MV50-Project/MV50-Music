@@ -130,7 +130,7 @@ public class GameController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (preSpawn == false)
+        if (preSpawn == false && noteNumber<levelData.keys.Count())
         {
             sphereLocation = new Vector3(levelData.keys[noteNumber].coordinates.x, levelData.keys[noteNumber].coordinates.y, levelData.keys[noteNumber].coordinates.z);
             newSphere = Instantiate(sphere, new Vector3(0,-3, 0), Quaternion.Euler(90f, 0f, 0f));
@@ -150,9 +150,12 @@ public class GameController : MonoBehaviour
             if (noteNumber != levelData.keys.Count()-1)
             {
                 nextBeatTime += beatTime * levelData.keys[noteNumber + 1].waitForBeat;
+                
             }
 
             noteNumber++;
+
+
         }
     }
 

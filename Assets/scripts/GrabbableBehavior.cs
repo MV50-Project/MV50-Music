@@ -9,7 +9,7 @@ public class GrabbableBehavior : MonoBehaviour
 {
 
     private AudioSource audioSource;
-    public GameObject test;
+    public GameObject menuToggle;
     private Rigidbody rb;
     private GameObject grabber;
     private bool wasKinematic;
@@ -20,9 +20,9 @@ public class GrabbableBehavior : MonoBehaviour
 
     private Vector3 previousGrabberPosition;
     private Vector3 grabberVelocity;
-    
 
     private float throwBoost = 2f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,8 +37,6 @@ public class GrabbableBehavior : MonoBehaviour
             grabberVelocity = (grabber.transform.position - previousGrabberPosition) / Time.fixedDeltaTime;
             previousGrabberPosition = grabber.transform.position;
         }
-
-
     }
 
     public void TryGrab(GameObject grabber)
@@ -72,28 +70,28 @@ public class GrabbableBehavior : MonoBehaviour
         {
             transform.parent = null;
             rb.isKinematic = wasKinematic;
-            rb.velocity = grabberVelocity*throwBoost;  // Apply grabber's velocity to the object
+            rb.velocity = grabberVelocity * throwBoost;  // Apply grabber's velocity to the object
             isHeld = false;
             this.grabber = null;  // Clear the reference to the grabber
-
         }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("tourne_disque"))
         {
-            if (test)
+            if (!menuToggle.activeInHierarchy)
             {
-                test.SetActive(false);
+                menuToggle.SetActive(true);
             }
             audioSource.Play();
-            gameObject.transform.position = new Vector3(0.0413f, 0.765f, 0.4807f);
+            gameObject.transform.position = new Vector3(0.0463f, 0.856f, 0.7801f);
             gameObject.transform.rotation = Quaternion.identity;
-            TryRelease(grabber);
-
-
+            if (grabber != null) // Check if grabber is not null
+            {
+                TryRelease(grabber);
+            }
+            grabType = GrabType.None;
 
             //SceneManager.LoadScene("SampleScene");
         }

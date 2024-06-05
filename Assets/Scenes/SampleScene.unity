@@ -2435,6 +2435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &893252907
 Rigidbody:
@@ -2831,6 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &993160846
 Rigidbody:
@@ -3518,6 +3520,7 @@ GameObject:
   - component: {fileID: 1038674922}
   - component: {fileID: 1038674923}
   - component: {fileID: 1038674924}
+  - component: {fileID: 1038674925}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Untagged
@@ -3928,6 +3931,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: 77dce967d47b7a24a8d9db73314a726b, type: 3}
+--- !u!114 &1038674925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038674918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee573f7b21ae8d45941dd9c0bc55fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1039011523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4368,6 +4383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &1358718018
 Rigidbody:
@@ -4949,6 +4965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &1835256585
 Rigidbody:
@@ -5344,6 +5361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &1947665733
 Rigidbody:
@@ -5676,6 +5694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e485b6c21d294549a5524f4dc2ccc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuToggle: {fileID: 0}
   grabType: 2
 --- !u!54 &2109557587
 Rigidbody:
