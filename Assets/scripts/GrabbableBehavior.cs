@@ -85,7 +85,7 @@ public class GrabbableBehavior : MonoBehaviour
                 menuToggle.SetActive(true);
             }
             audioSource.Play();
-            gameObject.transform.position = new Vector3(0.0463f, 0.856f, 0.7801f);
+            gameObject.transform.position = new Vector3(-0.219f, 0.8516f, 0.7786f);
             gameObject.transform.rotation = Quaternion.identity;
             if (grabber != null) // Check if grabber is not null
             {
