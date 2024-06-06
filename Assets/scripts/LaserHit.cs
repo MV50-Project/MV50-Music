@@ -87,13 +87,13 @@ public class LaserHit : MonoBehaviour
                 if (hit.rigidbody)
                 {
                     GameObject sphereHit = hit.rigidbody.gameObject;
-                    AudioSource soundHit = hit.rigidbody.gameObject.GetComponent<AudioSource>();
-                    sphereHit.transform.position = new Vector3(0, -2f, 0);
-                    soundHit.Play();
-                    StartCoroutine(DestroyObjectAfterDelay(sphereHit, 1f));
-
-
-
+                    if (sphereHit.CompareTag("cible"))
+                    {
+                        AudioSource soundHit = hit.rigidbody.gameObject.GetComponent<AudioSource>();
+                        sphereHit.transform.position = new Vector3(0, -2f, 0);
+                        soundHit.Play();
+                        StartCoroutine(DestroyObjectAfterDelay(sphereHit, 1f));
+                    }
 
 
 

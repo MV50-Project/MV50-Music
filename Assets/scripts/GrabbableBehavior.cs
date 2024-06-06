@@ -92,6 +92,7 @@ public class GrabbableBehavior : MonoBehaviour
                 TryRelease(grabber);
             }
             grabType = GrabType.None;
+            PlayerPrefs.SetString("EntryMethod", "song1Map");
 
             //SceneManager.LoadScene("SampleScene");
         }
