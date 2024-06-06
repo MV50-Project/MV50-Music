@@ -86,7 +86,10 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        TextAsset map = Resources.Load<TextAsset>("song1Map");
+
+        string entryMethod = PlayerPrefs.GetString("EntryMethod", "none");
+        Debug.Log(entryMethod);
+        TextAsset map = Resources.Load<TextAsset>(entryMethod);
         readJsonMap(map);
         Debug.Log("lecture terminee");
         Debug.Log(songName);
@@ -97,7 +100,7 @@ public class GameController : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         //AudioClip audioClip = Resources.Load<AudioClip>("song1_noLead");
-        AudioClip audioClip = Resources.Load<AudioClip>("test");
+        AudioClip audioClip = Resources.Load<AudioClip>(entryMethod);
        
         leadNotes[0] = Resources.Load<AudioClip>("sound1");
         leadNotes[1] = Resources.Load<AudioClip>("sound2");
