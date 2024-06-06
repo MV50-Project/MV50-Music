@@ -13,8 +13,8 @@ public class GameController : MonoBehaviour
     private GameObject sphere;
     [SerializeField]
     private GameObject shpereTiming;
-    [SerializeField]
-    private GameObject secondSphereTiming;
+    //[SerializeField]
+    //private GameObject secondSphereTiming;
 
 
 
@@ -144,8 +144,8 @@ public class GameController : MonoBehaviour
         {
             newSphere.transform.position = sphereLocation;
             newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
-            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
-            newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(-18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
+            //newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
+            //newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(-18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
             newSphereTiming.transform.SetParent(newSphere.transform);
 
             preSpawn = false;
