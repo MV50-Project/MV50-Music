@@ -2260,6 +2260,7 @@ GameObject:
   - component: {fileID: 832447943}
   - component: {fileID: 832447944}
   - component: {fileID: 832447946}
+  - component: {fileID: 832447947}
   - component: {fileID: 832447945}
   m_Layer: 0
   m_Name: GameController
@@ -2411,6 +2412,23 @@ MonoBehaviour:
   barSpacing: 0.8
   emissiveMaterial: {fileID: 2100000, guid: 111d40e7c2a8128458653fdbafdb2b66, type: 2}
   audioSource: {fileID: 832447945}
+--- !u!114 &832447947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832447942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c14d4c0015cb724cbfd06ab16e7e715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 291342132}
+  numberOfSamples: 64
+  maxIntensity: 10
+  audioSource: {fileID: 832447945}
+  smoothingSpeed: 2
 --- !u!1 &878673863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9056696933442435466, guid: 6f0c9d3964cfa9f438e9d23cf798d27a, type: 3}
