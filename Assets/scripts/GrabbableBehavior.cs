@@ -21,6 +21,9 @@ public class GrabbableBehavior : MonoBehaviour
     private Vector3 previousGrabberPosition;
     private Vector3 grabberVelocity;
 
+    private Vector3 startPos;
+    private Quaternion startRotation;
+
     private float throwBoost = 2f;
 
     void Start()
@@ -28,6 +31,8 @@ public class GrabbableBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         wasKinematic = rb.isKinematic;
         audioSource = GetComponent<AudioSource>();
+        startPos = gameObject.transform.position;
+        startRotation = gameObject.transform.rotation;
     }
 
     void FixedUpdate()
@@ -95,6 +100,17 @@ public class GrabbableBehavior : MonoBehaviour
             PlayerPrefs.SetString("EntryMethod", "song1Map");
 
             //SceneManager.LoadScene("SampleScene");
+        }
+
+        else if (gameObject.CompareTag("gun"))
+        {
+            // Behaviour only made for the gun objects
+            if (other.gameObject.CompareTag("floor"))
+            {
+                gameObject.transform.position = startPos;
+                gameObject.transform.rotation = startRotation;
+                rb.isKinematic = false;
+            }
         }
     }
 }

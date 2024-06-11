@@ -9,6 +9,7 @@ TagManager:
   - cible
   - disque_song1
   - tourne_disque
+  - gun
   layers:
   - Default
   - TransparentFX
