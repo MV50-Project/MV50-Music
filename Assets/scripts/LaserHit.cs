@@ -11,6 +11,7 @@ public class LaserHit : MonoBehaviour
     private bool shoot = false;
     private bool hasShot = false;
     public GameObject laserToShow;
+    public GameObject particleEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -90,9 +91,12 @@ public class LaserHit : MonoBehaviour
                     if (sphereHit.CompareTag("cible"))
                     {
                         AudioSource soundHit = hit.rigidbody.gameObject.GetComponent<AudioSource>();
+                        GameObject particle = Instantiate(particleEffect, hit.rigidbody.gameObject.transform.position, Quaternion.identity);
                         sphereHit.transform.position = new Vector3(0, -2f, 0);
                         soundHit.Play();
+                        
                         StartCoroutine(DestroyObjectAfterDelay(sphereHit, 1f));
+                        StartCoroutine(DestroyObjectAfterDelay(particle, 1f));
                     }
 
 
@@ -102,7 +106,7 @@ public class LaserHit : MonoBehaviour
                 LineRenderer renderLaser = laser.GetComponent<LineRenderer>();
                 renderLaser.SetPosition(0, lineRenderer.GetPosition(0));
                 renderLaser.SetPosition(1, lineRenderer.GetPosition(1));
-                StartCoroutine(DestroyObjectAfterDelay(laser, 0.25f));
+                StartCoroutine(DestroyObjectAfterDelay(laser, 0.1f));
                 hasShot = true;
 
 

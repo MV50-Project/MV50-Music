@@ -8,7 +8,8 @@ public class AudioLightVisualizer : MonoBehaviour
     public int numberOfSamples = 64; 
     public float maxIntensity = 10f;  
     public AudioSource audioSource; 
-    public float smoothingSpeed = 2f;  
+    public float smoothingSpeed = 2f;
+    public List<Light> gameObjects;
 
     private float currentIntensity = 0f;  
 
@@ -50,7 +51,9 @@ public class AudioLightVisualizer : MonoBehaviour
 
         currentIntensity = Mathf.Lerp(currentIntensity, targetIntensity, smoothingSpeed * Time.deltaTime);
 
+        for(int i = 0; i < gameObjects.Count; i++)
+            gameObjects[i].intensity = currentIntensity*2;
 
-        directionalLight.intensity = currentIntensity;
+        directionalLight.intensity = currentIntensity*0.7f;
     }
 }
