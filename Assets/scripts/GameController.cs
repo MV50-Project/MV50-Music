@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     private GameObject sphere;
     [SerializeField]
     private GameObject shpereTiming;
+    [SerializeField]
+    private GameObject endingMenu;
+
     //[SerializeField]
     //private GameObject secondSphereTiming;
 
@@ -20,6 +23,7 @@ public class GameController : MonoBehaviour
 
     private AudioSource audioSource;
     private AudioClip[] leadNotes = new AudioClip[5];
+    
 
     // Level variables
     [System.Serializable]
@@ -83,6 +87,8 @@ public class GameController : MonoBehaviour
     private GameObject newSphere;
     private GameObject newSphereTiming;
     private GameObject newSecondSphereTiming;
+    private bool beatBeforeMenuInit = false;
+    private bool menuShown = false;
 
     private void Start()
     {
@@ -140,21 +146,35 @@ public class GameController : MonoBehaviour
             newSphere.GetComponent<AudioSource>().clip = leadNotes[levelData.keys[noteNumber].note];
             preSpawn = true;
         }
-        if (Time.time >= nextBeatTime && noteNumber <= levelData.keys.Count()-1)
+        if (Time.time >= nextBeatTime)
         {
-            newSphere.transform.position = sphereLocation;
-            newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
-            //newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
-            //newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(-18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
-            newSphereTiming.transform.SetParent(newSphere.transform);
-
-            preSpawn = false;
-
-            if (noteNumber != levelData.keys.Count()-1)
+            if (noteNumber <= levelData.keys.Count() - 1)
             {
-                nextBeatTime += beatTime * levelData.keys[noteNumber + 1].waitForBeat;
-                
+                newSphere.transform.position = sphereLocation;
+                newSphereTiming = Instantiate(shpereTiming, sphereLocation, Quaternion.identity);
+                //newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
+                //newSecondSphereTiming = Instantiate(secondSphereTiming, new Vector3(-18f, 19.19f, 44.15f), Quaternion.Euler(90f, 0f, 0f));
+                newSphereTiming.transform.SetParent(newSphere.transform);
+
+                preSpawn = false;
+
+                if (noteNumber != levelData.keys.Count() - 1)
+                {
+                    nextBeatTime += beatTime * levelData.keys[noteNumber + 1].waitForBeat;
+
+                }
+                else if (beatBeforeMenuInit == false)
+                {
+                    nextBeatTime += beatTime + 3;
+                    beatBeforeMenuInit = true;
+                }
             }
+            else if (menuShown == false)
+            {
+                endingMenu.SetActive(true);
+                menuShown = true;
+            }
+
 
             noteNumber++;
 

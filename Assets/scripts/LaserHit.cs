@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class LaserHit : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class LaserHit : MonoBehaviour
     public GameObject laserToShow;
     public GameObject particleEffect;
     private int score = 0;
+    public TMP_Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -111,9 +113,8 @@ public class LaserHit : MonoBehaviour
                         {
                             score += 25;
                         }
-
-                        Debug.Log(scaleScore);
-                        //scale score : moment ou il faut tirer environ 2
+                        Debug.Log(score);
+                        scoreText.text = "Score final : " + score;
 
 
                         GameObject particle = Instantiate(particleEffect, hit.rigidbody.gameObject.transform.position, Quaternion.identity);
