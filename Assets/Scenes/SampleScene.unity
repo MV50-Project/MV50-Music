@@ -1208,6 +1208,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2005344642}
     - target: {fileID: 5066659959848747761, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
+      propertyPath: endingMenu
+      value: 
+      objectReference: {fileID: 1743608759}
+    - target: {fileID: 5066659959848747761, guid: d4e9f887f026cce49a7665b93931538b, type: 3}
       propertyPath: musicPlayer
       value: 
       objectReference: {fileID: 832447945}
