@@ -12,6 +12,7 @@ public class GetFinalScore : MonoBehaviour
     public GameObject gunLeft;
     public TMP_Text finalScoreText;
 
+
     private LaserHit scriptLaserRight;
     private LaserHit scriptLaserLeft;
 
@@ -24,6 +25,7 @@ public class GetFinalScore : MonoBehaviour
         int finalScore = rightValue + leftValue;
         gunLeft.SetActive(false);
         gunRight.SetActive(false);
+
 
         finalScoreText.text = "Final Score : " + finalScore;
     }

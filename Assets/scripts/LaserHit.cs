@@ -114,7 +114,6 @@ public class LaserHit : MonoBehaviour
                         {
                             score += 25;
                         }
-                        Debug.Log(score);
                         PistolScoreText.text = ""+score;
 
 

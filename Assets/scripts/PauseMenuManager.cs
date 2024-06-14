@@ -7,24 +7,30 @@ public class PauseMenuManager : MonoBehaviour
     public AudioSource musicPlayer;
     public GameObject rightGun;
     public GameObject leftGun;
+    public GameObject endingMenu;
+
 
     public void TogglePauseMenu()
     {
-        if (!pauseMenu) return;
-        pauseMenu.SetActive(!pauseMenu.activeSelf);
-        rightGun.SetActive(!rightGun.activeSelf);
-        leftGun.SetActive(!leftGun.activeSelf);
-            
-        if(pauseMenu.activeSelf)
+        if (endingMenu.activeSelf == false)
         {
-            Time.timeScale = 0;
-            musicPlayer.Pause();
+            if (!pauseMenu) return;
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            rightGun.SetActive(!rightGun.activeSelf);
+            leftGun.SetActive(!leftGun.activeSelf);
+
+            if (pauseMenu.activeSelf)
+            {
+                Time.timeScale = 0;
+                musicPlayer.Pause();
+            }
+            else
+            {
+                Time.timeScale = 1;
+                musicPlayer.Play();
+            }
         }
-        else
-        {
-            Time.timeScale = 1;
-            musicPlayer.Play();
-        }
+        
     }
     
     public void OnVolumeChanged(float value)

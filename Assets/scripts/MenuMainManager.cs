@@ -8,7 +8,6 @@ public class MenuMainManager : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        Debug.Log("test");
         pauseMenu.SetActive(false);
 
     }
