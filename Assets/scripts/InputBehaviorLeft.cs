@@ -11,7 +11,7 @@ public class InputsBehaviorLeft : MonoBehaviour
 
    
 
-    public void OnLeftGripAxis(InputAction.CallbackContext context)
+    public void OnLeftTriggerAxis(InputAction.CallbackContext context)
     {
         if (leftAnimatorHand)
         {
