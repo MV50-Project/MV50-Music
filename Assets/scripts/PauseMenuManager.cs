@@ -5,11 +5,15 @@ public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenu;
     public AudioSource musicPlayer;
+    public GameObject rightGun;
+    public GameObject leftGun;
 
     public void TogglePauseMenu()
     {
         if (!pauseMenu) return;
         pauseMenu.SetActive(!pauseMenu.activeSelf);
+        rightGun.SetActive(!rightGun.activeSelf);
+        leftGun.SetActive(!leftGun.activeSelf);
             
         if(pauseMenu.activeSelf)
         {

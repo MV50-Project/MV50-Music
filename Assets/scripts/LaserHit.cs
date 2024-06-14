@@ -13,8 +13,7 @@ public class LaserHit : MonoBehaviour
     private bool hasShot = false;
     public GameObject laserToShow;
     public GameObject particleEffect;
-    private int score = 0;
-    public TMP_Text scoreText;
+    public int score = 0;
     public TMP_Text PistolScoreText;
 
     // Start is called before the first frame update
@@ -62,6 +61,7 @@ public class LaserHit : MonoBehaviour
         }
 
     }
+
 
 
 
@@ -115,7 +115,6 @@ public class LaserHit : MonoBehaviour
                             score += 25;
                         }
                         Debug.Log(score);
-                        scoreText.text = "Score final : " + score;
                         PistolScoreText.text = ""+score;
 
 
