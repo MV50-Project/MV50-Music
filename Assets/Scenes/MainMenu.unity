@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 81522045}
   - component: {fileID: 81522043}
   - component: {fileID: 81522046}
+  - component: {fileID: 81522047}
   m_Layer: 0
   m_Name: snap_disque
   m_TagString: disque_song1
@@ -194,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 81522039}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.219, y: 0.388, z: 0.7786}
+  m_LocalPosition: {x: -0.226, y: 0.387, z: 0.7786}
   m_LocalScale: {x: 1.2475, y: 1.2475, z: 1.2475}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -339,6 +340,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &81522047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81522039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92bb0a8c26925204c92f284e9c43f3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disc: {fileID: 81522039}
+  resetY: -0.03
 --- !u!1 &214932422
 GameObject:
   m_ObjectHideFlags: 0
