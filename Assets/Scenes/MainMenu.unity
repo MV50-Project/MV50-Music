@@ -3066,7 +3066,7 @@ MonoBehaviour:
   m_RequestedTrackingMode: 2
   m_TrackingOriginMode: 1
   m_TrackingSpace: 1
-  m_CameraYOffset: 1.36144
+  m_CameraYOffset: 2.38
 --- !u!4 &1213942269
 Transform:
   m_ObjectHideFlags: 0
