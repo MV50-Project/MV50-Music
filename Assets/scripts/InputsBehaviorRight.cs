@@ -9,7 +9,7 @@ public class InputsBehaviorRight : MonoBehaviour
     public Animator rightAnimatorHand;
 
    
-    public void OnGripAxis(InputAction.CallbackContext context)
+    public void OnTriggerAxis(InputAction.CallbackContext context)
     {
         if (rightAnimatorHand)
         {
