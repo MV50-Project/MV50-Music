@@ -146,11 +146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3309893733843380341, guid: fbf9c3ba29fe6d04c8dfc490254eec79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.287
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 3309893733843380341, guid: fbf9c3ba29fe6d04c8dfc490254eec79, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.1449242
+      value: -7.83
       objectReference: {fileID: 0}
     - target: {fileID: 3309893733843380341, guid: fbf9c3ba29fe6d04c8dfc490254eec79, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3053,7 +3053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
+  - component: {fileID: 963194230}
   - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
@@ -3062,14 +3062,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -3154,6 +3146,14 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
+--- !u!81 &963194230
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
 --- !u!1 &1012688130
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class sphereTiming : MonoBehaviour
 
     void Start()
     {
-        duration = (60f / bpm) * 3 - ((60f / bpm) *0.3f);// == needs to be played in 3 beats
+        duration = (60f / bpm) * 3 - ((60f / bpm) *0.1f);// == needs to be played in 3 beats
         scale = transform.localScale;
     }
 

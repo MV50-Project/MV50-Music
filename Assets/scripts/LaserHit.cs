@@ -12,6 +12,7 @@ public class LaserHit : MonoBehaviour
     private bool hasShot = false;
     public GameObject laserToShow;
     public GameObject particleEffect;
+    private int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -91,8 +92,34 @@ public class LaserHit : MonoBehaviour
                     if (sphereHit.CompareTag("cible"))
                     {
                         AudioSource soundHit = hit.rigidbody.gameObject.GetComponent<AudioSource>();
+                        GameObject sphereTiming = sphereHit.transform.GetChild(1).gameObject;
+                        float scaleScore = sphereTiming.transform.localScale.x;
+
+                        if(scaleScore >= 1.9f && scaleScore <= 2.1f)
+                        {
+                            score += 100;
+                        }
+                        else if(scaleScore >= 1.75f && scaleScore <= 2.25f)
+                        {
+                            score += 75;
+                        }
+                        else if(scaleScore >= 1.5f && scaleScore <= 2.5f)
+                        {
+                            score += 50;
+                        }
+                        else if(scaleScore >= 1.25 && scaleScore <= 2.75)
+                        {
+                            score += 25;
+                        }
+
+                        Debug.Log(scaleScore);
+                        //scale score : moment ou il faut tirer environ 2
+
+
                         GameObject particle = Instantiate(particleEffect, hit.rigidbody.gameObject.transform.position, Quaternion.identity);
+
                         sphereHit.transform.position = new Vector3(0, -2f, 0);
+
                         soundHit.Play();
                         
                         StartCoroutine(DestroyObjectAfterDelay(sphereHit, 1f));
