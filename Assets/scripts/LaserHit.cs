@@ -15,6 +15,7 @@ public class LaserHit : MonoBehaviour
     public GameObject particleEffect;
     private int score = 0;
     public TMP_Text scoreText;
+    public TMP_Text PistolScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +116,7 @@ public class LaserHit : MonoBehaviour
                         }
                         Debug.Log(score);
                         scoreText.text = "Score final : " + score;
+                        PistolScoreText.text = ""+score;
 
 
                         GameObject particle = Instantiate(particleEffect, hit.rigidbody.gameObject.transform.position, Quaternion.identity);
