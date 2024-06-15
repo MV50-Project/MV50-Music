@@ -4,12 +4,13 @@ using UnityEngine.SceneManagement;
 public class MenuMainManager : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject gunToggle;
     public GameObject disque;
 
     public void TogglePauseMenu()
     {
         pauseMenu.SetActive(false);
-
+        gunToggle.SetActive(true);
     }
     
 

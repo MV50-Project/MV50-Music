@@ -15,6 +15,7 @@ public class LaserHit : MonoBehaviour
     public GameObject particleEffect;
     public int score = 0;
     public TMP_Text PistolScoreText;
+    public TMP_Text feedbackText;
 
     // Start is called before the first frame update
     void Start()
@@ -95,25 +96,36 @@ public class LaserHit : MonoBehaviour
                     if (sphereHit.CompareTag("cible"))
                     {
                         AudioSource soundHit = hit.rigidbody.gameObject.GetComponent<AudioSource>();
+                        soundHit.Play();
+                        TMP_Text instanceFeedbackText = Instantiate(feedbackText, new Vector3(sphereHit.transform.position.x, sphereHit.transform.position.y, sphereHit.transform.position.z), Quaternion.identity); 
                         GameObject sphereTiming = sphereHit.transform.GetChild(1).gameObject;
                         float scaleScore = sphereTiming.transform.localScale.x;
 
                         if(scaleScore >= 1.9f && scaleScore <= 2.1f)
                         {
                             score += 100;
+                            instanceFeedbackText.text = "Parfait";
+                            instanceFeedbackText.color = new Color(0f, 0.9f, 1f, 1f);
                         }
-                        else if(scaleScore >= 1.75f && scaleScore <= 2.25f)
+                        else if(scaleScore >= 1.7f && scaleScore <= 2.3f)
                         {
                             score += 75;
+                            instanceFeedbackText.text = "Bien";
+                            instanceFeedbackText.color = new Color(1.643161f, 0.08525834f, 1.341241f, 1f);
                         }
-                        else if(scaleScore >= 1.5f && scaleScore <= 2.5f)
+                        else if(scaleScore >= 1.3f && scaleScore <= 2.7f)
                         {
                             score += 50;
+                            instanceFeedbackText.text = "OK";
+                            instanceFeedbackText.color = new Color(1.498039f, 1.081746f, 0.07843135f, 1f);
                         }
-                        else if(scaleScore >= 1.25 && scaleScore <= 2.75)
+                        else //if(scaleScore >= 1.2 && scaleScore <= 2.8)
                         {
                             score += 25;
+                            instanceFeedbackText.text = "Mauvais";
+                            instanceFeedbackText.color = new Color(1.498039f, 0.02996079f, 0.05992157f, 1f);
                         }
+                       
                         PistolScoreText.text = ""+score;
 
 
@@ -121,10 +133,12 @@ public class LaserHit : MonoBehaviour
 
                         sphereHit.transform.position = new Vector3(0, -2f, 0);
 
-                        soundHit.Play();
                         
-                        StartCoroutine(DestroyObjectAfterDelay(sphereHit, 1f));
+                        
+                        StartCoroutine(DestroyObjectAfterDelay(sphereHit, 2f));
                         StartCoroutine(DestroyObjectAfterDelay(particle, 1f));
+                        StartCoroutine(DestroyTextAfterDelay(instanceFeedbackText, 1f));
+                        
                     }
 
 
@@ -157,6 +171,14 @@ public class LaserHit : MonoBehaviour
 
         // Destroy the object after the delay
         Destroy(gameObject);
+    }
+    IEnumerator DestroyTextAfterDelay(TMP_Text text, float time)
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(time);
+
+        // Destroy the object after the delay
+        Destroy(text);
     }
 
 
