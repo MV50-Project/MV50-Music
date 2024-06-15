@@ -3140,6 +3140,7 @@ MonoBehaviour:
   particleEffect: {fileID: 5564407916458569900, guid: 0d184bd4fee95894ab27d3ca14f3e730, type: 3}
   score: 0
   PistolScoreText: {fileID: 1996240891}
+  feedbackText: {fileID: 5954172593345523439, guid: fb97161dcc1679d45ad8d4e224e464c1, type: 3}
 --- !u!1 &832447942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4958,6 +4959,7 @@ MonoBehaviour:
   particleEffect: {fileID: 5564407916458569900, guid: 0d184bd4fee95894ab27d3ca14f3e730, type: 3}
   score: 0
   PistolScoreText: {fileID: 327840760}
+  feedbackText: {fileID: 5954172593345523439, guid: fb97161dcc1679d45ad8d4e224e464c1, type: 3}
 --- !u!1 &1169142590
 GameObject:
   m_ObjectHideFlags: 0

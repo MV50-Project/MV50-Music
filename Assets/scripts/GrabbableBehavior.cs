@@ -12,6 +12,7 @@ public class GrabbableBehavior : MonoBehaviour
     public GameObject menuToggle;
     private Rigidbody rb;
     private GameObject grabber;
+    public GameObject gunToggle;
     private bool wasKinematic;
     private bool isHeld = false;
     public GrabType grabType = GrabType.Free;
@@ -83,6 +84,7 @@ public class GrabbableBehavior : MonoBehaviour
             if (!menuToggle.activeInHierarchy)
             {
                 menuToggle.SetActive(true);
+                gunToggle.SetActive(false);
             }
             audioSource.Play();
             gameObject.transform.position = new Vector3(-0.219f, 0.8516f, 0.7786f);

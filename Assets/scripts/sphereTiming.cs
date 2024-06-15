@@ -32,7 +32,7 @@ public class sphereTiming : MonoBehaviour
         else
         {
             transform.localScale = targetScale;
-            StartCoroutine(DestroyObjectAfterDelay(transform.parent.gameObject, gameObject, 60f/bpm));
+            StartCoroutine(DestroyObjectAfterDelay(transform.parent.gameObject, gameObject, 2f));
 
 
         }
