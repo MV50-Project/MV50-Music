@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class MenuMainManager : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject scoreboardMenu;
     public GameObject gunToggle;
     public GameObject disque;
 
     public void TogglePauseMenu()
     {
         pauseMenu.SetActive(false);
+        scoreboardMenu.SetActive(false);
         gunToggle.SetActive(true);
     }
     
@@ -25,7 +27,6 @@ public class MenuMainManager : MonoBehaviour
     
     public void OnPlayClicked()
     {
-        TogglePauseMenu();
         const string sceneName = "SampleScene";
         SceneManager.LoadScene(sceneName);
     }

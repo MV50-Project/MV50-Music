@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Linq;
+using TMPro;
 
 public enum GrabType { None, Free, Snap };
 [RequireComponent(typeof(Rigidbody))]
@@ -10,6 +13,8 @@ public class GrabbableBehavior : MonoBehaviour
 
     private AudioSource audioSource;
     public GameObject menuToggle;
+    public GameObject scoreboardToggle;
+    public TMP_Text scoreboardText;
     private Rigidbody rb;
     private GameObject grabber;
     public GameObject gunToggle;
@@ -17,7 +22,7 @@ public class GrabbableBehavior : MonoBehaviour
     private bool isHeld = false;
     public GrabType grabType = GrabType.Free;
     private Vector3 position_snap = new Vector3(6.68f, 0.83f, -7f);
-    // Start is called before the first frame update
+    
 
     private Vector3 previousGrabberPosition;
     private Vector3 grabberVelocity;
@@ -77,6 +82,41 @@ public class GrabbableBehavior : MonoBehaviour
         }
     }
 
+    private void showScoreboard(string mapName)
+    {
+        
+        string scoreboardPath = "scoreboardFinal" + mapName + ".txt";
+        string fullPath = Path.Combine(Application.persistentDataPath, scoreboardPath);
+        Debug.Log(fullPath);
+        if (!File.Exists(fullPath))
+        {
+            using (StreamWriter writer = File.CreateText(fullPath))
+            {
+                writer.WriteLine("10000");
+                writer.WriteLine("8000");
+                writer.WriteLine("6000");
+                writer.WriteLine("4000");
+                writer.WriteLine("2000");
+            }
+        }
+        string[] lines = File.ReadAllLines(fullPath);
+
+        int[] numbers = lines.Select(int.Parse).ToArray();
+
+        int[] sortedValues = numbers.OrderByDescending(num => num).ToArray();
+
+        string resultText = "";
+        for (int i = 0; i < Mathf.Min(5, sortedValues.Length); i++)
+        {
+            resultText += sortedValues[i] + "\n";
+        }
+
+        scoreboardText.text = resultText;
+
+
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("tourne_disque"))
@@ -84,6 +124,7 @@ public class GrabbableBehavior : MonoBehaviour
             if (!menuToggle.activeInHierarchy)
             {
                 menuToggle.SetActive(true);
+                scoreboardToggle.SetActive(true);
                 gunToggle.SetActive(false);
             }
             audioSource.Play();
@@ -95,8 +136,15 @@ public class GrabbableBehavior : MonoBehaviour
             }
             grabType = GrabType.None;
             PlayerPrefs.SetString("EntryMethod", "song1Map");
+            showScoreboard("song1Map");
 
             //SceneManager.LoadScene("SampleScene");
         }
     }
+
+
+
 }
+
+
+
