@@ -94,13 +94,13 @@ public class GameController : MonoBehaviour
     {
 
         string entryMethod = PlayerPrefs.GetString("EntryMethod", "none");
-        Debug.Log(entryMethod);
+        //Debug.Log(entryMethod);
         TextAsset map = Resources.Load<TextAsset>(entryMethod);
         readJsonMap(map);
-        Debug.Log("lecture terminee");
-        Debug.Log(songName);
+        //Debug.Log("lecture terminee");
+        //Debug.Log(songName);
         beatTime = 60f / musicInfo.bpm;
-        Debug.Log(beatTime);
+        //Debug.Log(beatTime);
         nextBeatTime = Time.time + levelData.initialWaitForBeat*beatTime;
         noteNumber = 0;
 

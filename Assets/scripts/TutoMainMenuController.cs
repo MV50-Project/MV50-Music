@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TutoMainMenuController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class TutoMainMenuController : MonoBehaviour
     private GameObject sphere;
     [SerializeField]
     private GameObject shpereTiming;
+
 
     private int bpm = 105;
     private AudioClip tutoNote;
@@ -19,13 +21,13 @@ public class TutoMainMenuController : MonoBehaviour
 
 
 
+
     void Start()
     {
 
         tutoNote = Resources.Load<AudioClip>("sound3");
         beatTime = 60f / bpm;
         nextBeatTime = Time.time + 6 * beatTime;
-
     }
 
 
