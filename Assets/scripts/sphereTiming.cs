@@ -25,7 +25,7 @@ public class sphereTiming : MonoBehaviour
 
         float fraction = elapsedTime / duration;
 
-        if (fraction < 1f)
+        if (fraction < 0.85f)
         {
             transform.localScale = Vector3.Lerp(scale, targetScale, fraction);
         }
