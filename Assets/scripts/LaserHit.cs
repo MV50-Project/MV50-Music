@@ -133,11 +133,11 @@ public class LaserHit : MonoBehaviour
 
                         sphereHit.transform.position = new Vector3(0, -2f, 0);
 
-                        
-                        
+                        GameObject tmpTextObject = instanceFeedbackText.gameObject;
+
                         StartCoroutine(DestroyObjectAfterDelay(sphereHit, 2f));
                         StartCoroutine(DestroyObjectAfterDelay(particle, 1f));
-                        StartCoroutine(DestroyTextAfterDelay(instanceFeedbackText, 1f));
+                        StartCoroutine(DestroyObjectAfterDelay(tmpTextObject, 1f));
                         
                     }
 
@@ -171,14 +171,6 @@ public class LaserHit : MonoBehaviour
 
         // Destroy the object after the delay
         Destroy(gameObject);
-    }
-    IEnumerator DestroyTextAfterDelay(TMP_Text text, float time)
-    {
-        // Wait for the specified delay
-        yield return new WaitForSeconds(time);
-
-        // Destroy the object after the delay
-        Destroy(text);
     }
 
 
